@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nobotara71 — NASA Legendary Missions</title>
+    <meta name="description" content="Nobotara71 interactive space mission showcase featuring Apollo 11, Earth, and Voyager 1." />
+    <meta property="og:title" content="Nobotara71 — NASA Legendary Missions" />
+    <meta property="og:description" content="Nobotara71 interactive space mission showcase featuring Apollo 11, Earth, and Voyager 1." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nobotara71 — NASA Legendary Missions" />
+    <link rel="icon" type="image/png" href="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260827_202005_3346cc4d-ec3b-44ab-825c-b18e49f5021a.png" />
+    <!-- Google Fonts Preconnect & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- SpaceAI Modal Container -->
+    <div id="spaceai-modal" style="display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(5,8,17,0.95); flex-direction: column;">
+      <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(10,16,28,0.9);">
+        <div style="display: flex; align-items: center; gap: 8px; color: #00E5FF; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-family: system-ui, sans-serif;">
+          <span>🪐</span> SpaceAI Assistant
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <a
+            href="https://ais-pre-7rqifa56jmyh3fqma3loel-156861617483.asia-southeast1.run.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #00E5FF; text-decoration: none; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 9999px; background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.3);"
+          >
+            ↗ Open in New Tab
+          </a>
+          <button onclick="closeSpaceAI()" style="background: none; border: none; color: #94a3b8; font-size: 14px; cursor: pointer; display: flex; align-items: center;">
+            ✕ Exit Assistant
+          </button>
+        </div>
+      </div>
+      <iframe
+        id="spaceai-iframe"
+        src="https://ais-pre-7rqifa56jmyh3fqma3loel-156861617483.asia-southeast1.run.app"
+        style="width: 100%; flex: 1; border: none;"
+        allow="camera; microphone; autoplay; fullscreen"
+      ></iframe>
+    </div>
+
+    <script>
+      function openSpaceAI() {
+        var modal = document.getElementById('spaceai-modal');
+        if (modal) {
+          modal.style.display = 'flex';
+        }
+      }
+      function closeSpaceAI() {
+        var modal = document.getElementById('spaceai-modal');
+        if (modal) {
+          modal.style.display = 'none';
+        }
+      }
+
+      window.openSpaceAI = openSpaceAI;
+      window.closeSpaceAI = closeSpaceAI;
+
+      // Closes automatically when the user clicks the "< Back" button inside SpaceAI
+      window.addEventListener('message', function(event) {
+        if (event.data && (event.data.type === 'CLOSE_SPACE_AI' || event.data.type === 'AURA_BACK')) {
+          closeSpaceAI();
+        }
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan for removing the dual-tone progress bar and moving the frosted mission description card directly below the hero title across all three missions while keeping the GET STARTED CTA and bottom dock anchored in the lower viewport zone.",
+  "updatedAt":  "2026-10-28T20:09:00.625518040Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

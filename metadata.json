@@ -1,0 +1,6 @@
+{
+  "name": "SpaceEdu — NASA Legendary Missions",
+  "description": "Explore NASA's legendary space missions including Planet Earth, Apollo 11, and Voyager 1.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
